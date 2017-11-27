@@ -33,7 +33,3 @@ $RECYCLE.BIN/
 .DS_Store
 Thumbs.db
 UserInterfaceState.xcuserstate
-
-#ionic link
-
-ionic.config.json
