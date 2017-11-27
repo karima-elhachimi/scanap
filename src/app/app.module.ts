@@ -10,10 +10,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-//camera app geimporteerd volgens documentatie
-import { Camera } from '@ionic-native/camera';
-//barcode scanner geimporteerd
-import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+
 
 @NgModule({
   declarations: [
@@ -36,8 +33,6 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     TabsPage
   ],
   providers: [
-    Camera,
-    BarcodeScanner,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
