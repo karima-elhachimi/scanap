@@ -1,8 +1,0 @@
-{
-  "name": "scanap",
-  "app_id": "c223105e",
-  "type": "ionic-angular",
-  "integrations": {
-    "cordova": {}
-  }
-}
