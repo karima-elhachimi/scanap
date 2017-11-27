@@ -1,0 +1,18 @@
+{
+  "phonegap-plugin-barcodescanner": {
+    "source": {
+      "type": "registry",
+      "id": "https://github.com/wildabeast/BarcodeScanner.git"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-camera": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-camera@^3.0.0"
+    },
+    "is_top_level": true,
+    "variables": {}
+  }
+}
