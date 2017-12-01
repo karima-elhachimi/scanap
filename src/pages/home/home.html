@@ -13,5 +13,12 @@
     Use the button to either scan a new studentcard or show a list of already scanned student cards by clicking the list tab.
   </p>
 
+  <div *ngIf="results">
+    <p>{{results.text}}</p>
+    <p>{{results.format}}</p>
+    <p>{{results.cancel}}</p>
+
+  </div>
+
   <button ion-button (click)="scanBarcode()">Scan studentcard</button>
 </ion-content>
