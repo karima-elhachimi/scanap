@@ -35,7 +35,6 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
   ],
   providers: [
     Camera,
-
     BarcodeScanner,
     StatusBar,
     SplashScreen,

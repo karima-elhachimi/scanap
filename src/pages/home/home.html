@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary" >
     <ion-title>Home</ion-title>
   </ion-navbar>
 </ion-header>
@@ -10,6 +10,8 @@
     Scan studentcards and keep them in a handy list.
   </p>
   <p>
-    Use the tabs to either scan a new studentcard or show a list of already scanned student cards.
+    Use the button to either scan a new studentcard or show a list of already scanned student cards by clicking the list tab.
   </p>
+
+  <button ion-button (click)="scanBarcode()">Scan studentcard</button>
 </ion-content>
