@@ -21,4 +21,5 @@
   </div>
 
   <button ion-button (click)="scanBarcode()">Scan studentcard</button>
+  <button ion-button (click)="removeScanned()" *ngIf="isScanned">Verwijder laatste scan</button>
 </ion-content>
