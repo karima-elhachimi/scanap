@@ -8,27 +8,27 @@ export class StudentProvider {
 
   constructor(public storage: Storage) { }
 
-  isScanned(studentId) {
+  isScanned(gescandeNummer) {
     return this.getAllScanned().then(result => {
-      return result && result.indexOf(studentId) !== -1;
+      return result && result.indexOf(gescandeNummer) !== -1;
     });
   }
 
-  addScanned(studentId) {
+  addScanned(gescandeNummer) {
     return this.getAllScanned().then(result => {
       if (result) {
-        result.push(studentId);
+        result.push(gescandeNummer);
         return this.storage.set(STORAGE_KEY, result);
       } else {
-        return this.storage.set(STORAGE_KEY, [studentId]);
+        return this.storage.set(STORAGE_KEY, [gescandeNummer]);
       }
     });
   }
 
-  removeScanned(studentId) {
+  removeScanned(gescandeNummer) {
     return this.getAllScanned().then(result => {
       if (result) {
-        var index = result.indexOf(studentId);
+        var index = result.indexOf(gescandeNummer);
         result.splice(index, 1);
         return this.storage.set(STORAGE_KEY, result);
       }

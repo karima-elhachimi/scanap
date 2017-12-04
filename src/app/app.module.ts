@@ -13,10 +13,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { Camera } from '@ionic-native/camera';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { IonicStorageModule } from '@ionic/storage';
-import { StudentProvider } from '../providers/favorite/favorite';
+
 
 import { HttpModule } from '@angular/http';
-//import { StudentsPage } from "../pages/students/students";
+import { StudentslistProvider } from '../providers/studentslist/studentslist';
+
+
 
 @NgModule({
   declarations: [
@@ -48,7 +50,8 @@ import { HttpModule } from '@angular/http';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    StudentProvider
+    StudentslistProvider,
+    StudentslistProvider
   ]
 })
 export class AppModule {}
