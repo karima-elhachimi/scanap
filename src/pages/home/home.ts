@@ -16,8 +16,14 @@ export class HomePage {
   }
 
   async scanBarcode(){
-    this.results = await this.barcode.scan();
-    console.log(this.results);
+
+    this.options = {
+      prompt: 'Scan a barcode to see the student information.'
+    };
+
+    this.results = await this.barcode.scan(this.options);
+    console.log("fired from home.ts : "+ this.results);
   }
 
 }
+

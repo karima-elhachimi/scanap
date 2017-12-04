@@ -84,4 +84,6 @@
     <plugin name="cordova-plugin-camera" spec="^3.0.0" />
     <plugin name="phonegap-plugin-barcodescanner" spec="^7.0.0" />
     <engine name="browser" spec="~5.0.1" />
+    <allow-navigation href="http://192.168.1.17:8100" />
+    <plugin name="cordova-sqlite-storage" spec="^2.1.2" />
 </widget>
