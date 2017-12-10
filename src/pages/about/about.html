@@ -8,7 +8,16 @@
 
 <ion-content padding>
   <h4>List of scanned studentcards</h4>
-  <p>Nothing here yet...</p>
+
+
+  <div *ngIf="scannedStudents">
+    <ion-item *ngFor="let student of scannedStudents;">
+      {{student.naam}}{{student.date}}
+
+    </ion-item>
+
+
+  </div>
 
 
 </ion-content>

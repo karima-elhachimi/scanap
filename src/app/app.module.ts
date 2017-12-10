@@ -13,6 +13,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { Camera } from '@ionic-native/camera';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { IonicStorageModule } from '@ionic/storage';
+import { SQLite } from '@ionic-native/sqlite';
+import { Toast } from '@ionic-native/toast';
 
 
 import { HttpModule } from '@angular/http';
@@ -50,6 +52,9 @@ import { StudentslistProvider } from '../providers/studentslist/studentslist';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
+    SQLite,
+    Toast,
+
     StudentslistProvider,
     StudentslistProvider
   ]
