@@ -32,6 +32,7 @@ export class HomePage {
   scannedStudents: any = [];
   scannedStudent = { date:"", naam:"", snr: 0};
   name: string;
+  csvStudent: any[];
 
 
 
@@ -80,21 +81,7 @@ export class HomePage {
     this.csvData = parsedData;
   }
 
-  downloadCSV() {
-    let csv = papa.unparse({
-      fields: this.headerRow,
-      data: this.csvData
-    });
 
-    // Dummy implementation for Desktop download purpose
-    var blob = new Blob([csv]);
-    var a = window.document.createElement("a");
-    a.href = window.URL.createObjectURL(blob);
-    a.download = "newdata.csv";
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-  }
 
   private handleError(err) {
     console.log('something went wrong: ', err);
@@ -182,14 +169,10 @@ export class HomePage {
   getStudentNaam(result){
 
     let snr = result.text.slice(1, result.length);
-    for(let i = 0; this.csvData.length; i++){
 
-      let arrayStudent = this.csvData[i].split(',');
-      console.log(`array student snr: ${arrayStudent[1]} snr: ${snr} `);
+    this.csvStudent = this.csvData[0].split(',');
 
-      //if(arrayStudent[1] === snr)
 
-    }
   }
 
 
