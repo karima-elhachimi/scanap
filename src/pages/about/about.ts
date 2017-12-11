@@ -15,7 +15,6 @@ export class AboutPage {
   scannedStudents = [];
   constructor(public navCtrl: NavController,private sqlite: SQLite, private toast: Toast) {
 
-    this.createData();
     this.getCurrentData();
   }
 
