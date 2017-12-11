@@ -14,9 +14,7 @@
   </p>
 
   <div *ngIf="results">
-    <p>{{results.text}}</p>
-    <p>{{results.format}}</p>
-    <p>{{results.cancel}}</p>
+    <p>{{results.text.slice(1)}}</p>
 
     <button ion-button (click)="getStudentNaam(results)">get naam</button>
 
