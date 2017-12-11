@@ -168,9 +168,10 @@ export class HomePage {
 
   getStudentNaam(result){
 
-    let snr = result.text.slice(1, result.length);
+    let snr = result.text.slice(1);
 
     this.csvStudent = this.csvData[0].split(',');
+    this.toast.show("student naam: "+ this.csvStudent[2], '5000', 'center');
 
 
   }
