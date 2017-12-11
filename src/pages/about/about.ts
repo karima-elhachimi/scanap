@@ -49,7 +49,7 @@ export class AboutPage {
   }
 
 createData(){
-  this.scannedstudents.create({
+  this.scannedStudents.create({
     number: 1,
     name: 'wes',
     firstname: 'Cal',
