@@ -49,15 +49,11 @@ export class AboutPage {
   }
 
 createData(){
-  this.scannedStudents.create({
-    number: 1,
-    name: 'wes',
-    firstname: 'Cal',
-    snr: '97820044',
+  this.sqlite.create({
+    name: 'scannedstudents.db',
     location: 'default'
-
-  }).then((db: SQLiteObject)=> {
-    db.executeSql('INSERT INTO scannedstudents VALUES(NULL,?,?,?)',[ new Date(), this.naam,this.firstname, this.snr])
+  }).then((db: SQLiteObject) => {
+    db.executeSql('INSERT INTO scannedstudents VALUES(NULL,?,?,?)',[ new Date(), 'Cal','Wes', 097820044])
     .then(res => {
       console.log(res);
       this.toast.show('Data saved', '5000', 'center').subscribe(
