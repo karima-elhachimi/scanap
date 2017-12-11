@@ -47,15 +47,16 @@ export class AboutPage {
       );
     });
   }
+
 createData(){
   this.sqlite.create({
     name: 'wes',
     firstname: 'Cal',
-    s_nr: '97820044',
+    snr: '97820044',
     location: 'default'
 
   }).then((db: SQLiteObject)=> {
-    db.executeSql('INSERT INTO scannedstudents VALUES(NULL,?,?,?)',[ new Date(), this.scannedstudents.naam, this.scannedStudent.snr])
+    db.executeSql('INSERT INTO scannedstudents VALUES(NULL,?,?,?)',[ new Date(), this.scannedStudents.naam,this.scannedSudents.firstname, this.scannedStudent.snr])
     .then(res => {
       console.log(res);
       this.toast.show('Data saved', '5000', 'center').subscribe(
