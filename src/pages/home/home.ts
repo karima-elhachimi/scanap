@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import { NavController} from 'ionic-angular';
 import { BarcodeScanner, BarcodeScannerOptions } from "@ionic-native/barcode-scanner";
 //import { StudentslistProvider } from './../../providers/studentslist/studentslist';
 
@@ -8,9 +8,11 @@ import { Toast } from '@ionic-native/toast';
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 import { Http } from '@angular/http';
 //csv reader
+
+
 import * as papa from 'papaparse';
 
-import { AboutPage } from '../about/about';
+//import { AboutPage } from '../about/about';
 
 
 
@@ -53,6 +55,8 @@ export class HomePage {
     this.results = await this.barcode.scan(this.options);
     console.log("fired from home.ts : " + this.results);
 
+
+      //this.getStudentNaam( await this.results);
 
   }
 
