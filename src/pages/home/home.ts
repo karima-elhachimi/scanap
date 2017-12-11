@@ -32,6 +32,7 @@ export class HomePage {
   scannedStudents: any = [];
   scannedStudent = { date:"", naam:"", snr: 0};
   name: string;
+  csvStudent: any[];
 
 
 
@@ -80,21 +81,7 @@ export class HomePage {
     this.csvData = parsedData;
   }
 
-  downloadCSV() {
-    let csv = papa.unparse({
-      fields: this.headerRow,
-      data: this.csvData
-    });
 
-    // Dummy implementation for Desktop download purpose
-    var blob = new Blob([csv]);
-    var a = window.document.createElement("a");
-    a.href = window.URL.createObjectURL(blob);
-    a.download = "newdata.csv";
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-  }
 
   private handleError(err) {
     console.log('something went wrong: ', err);
@@ -146,50 +133,14 @@ export class HomePage {
     //
   }
 
-
-  saveData() {
-    this.sqlite.create({
-      name: 'scannedstudents.db',
-      location: 'default'
-    }).then((db: SQLiteObject) => {
-      db.executeSql('INSERT INTO scannedstudents VALUES(NULL,?,?,?)',[ new Date(), this.scannedStudent.naam, this.scannedStudent.snr])
-        .then(res => {
-          console.log(res);
-          this.toast.show('Data saved', '5000', 'center').subscribe(
-            toast => {
-              this.navCtrl.popToRoot();
-            }
-          );
-        })
-        .catch(e => {
-          console.log(e);
-          this.toast.show(e, '5000', 'center').subscribe(
-            toast => {
-              console.log(toast);
-            }
-          );
-        });
-    }).catch(e => {
-      console.log(e);
-      this.toast.show(e, '5000', 'center').subscribe(
-        toast => {
-          console.log(toast);
-        }
-      );
-    });
-  }
-
   getStudentNaam(result){
 
-    let snr = result.text.slice(1, result.length);
-    for(let i = 0; this.csvData.length; i++){
+    let snr = result.text.slice(1);
 
-      let arrayStudent = this.csvData[i].split(',');
-      console.log(`array student snr: ${arrayStudent[1]} snr: ${snr} `);
+    this.csvStudent = this.csvData[0].split(',');
+    this.toast.show("student naam: "+ this.csvStudent[2], '5000', 'center');
 
-      //if(arrayStudent[1] === snr)
 
-    }
   }
 
 
@@ -197,4 +148,3 @@ export class HomePage {
 
 
 }
-
