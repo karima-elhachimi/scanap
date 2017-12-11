@@ -175,6 +175,19 @@ export class HomePage {
     });
   }
 
+  getStudentNaam(result){
+
+    let snr = result.text.slice(1, result.length);
+    for(let i = 0; this.csvData.length; i++){
+
+      let arrayStudent = this.csvData[i].split(',');
+      console.log(`array student snr: ${arrayStudent[1]} snr: ${snr} `);
+
+      //if(arrayStudent[1] === snr)
+
+    }
+  }
+
 
 
 
