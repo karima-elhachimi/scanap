@@ -143,8 +143,36 @@ export class HomePage {
   }
 
   createStudentToSave(){
-    //
-  }
+    this.sqlite.create({
+      name: 'scannedstudents.db',
+      location: 'default'
+    }).then((db: SQLiteObject) => {
+      db.executeSql('INSERT INTO scannedstudents VALUES(NULL,?,?,?)',[ new Date(), 'Cal','Wes', 097820044])
+      .then(res => {
+        console.log(res);
+        this.toast.show('Data saved', '5000', 'center').subscribe(
+          toast => {
+            this.navCtrl.popToRoot();
+          }
+        );
+      })
+      .catch(e => {
+        console.log(e);
+        this.toast.show(e, '5000', 'center').subscribe(
+          toast => {
+            console.log(toast);
+          }
+        );
+      });
+    }).catch(e => {
+    console.log(e);
+    this.toast.show(e, '5000', 'center').subscribe(
+      toast => {
+        console.log(toast);
+      }
+    );
+    });
+    }
 
 
   saveData() {
@@ -197,4 +225,3 @@ export class HomePage {
 
 
 }
-
