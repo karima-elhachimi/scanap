@@ -49,7 +49,8 @@ export class AboutPage {
   }
 
 createData(){
-  this.sqlite.create({
+  this.scannedstudents.create({
+    number: 1,
     name: 'wes',
     firstname: 'Cal',
     snr: '97820044',
