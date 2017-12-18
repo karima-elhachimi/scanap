@@ -9,7 +9,6 @@ import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 import { Http } from '@angular/http';
 //csv reader
 
-
 import * as papa from 'papaparse';
 
 //import { AboutPage } from '../about/about';
