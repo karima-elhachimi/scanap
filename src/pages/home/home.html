@@ -14,11 +14,10 @@
   </p>
 
   <div *ngIf="results">
-    <p>{{results.text.slice(1)}}</p>
+    <p>{{results.text}}</p>
+    <p>{{results.format}}</p>
+    <p>{{results.cancel}}</p>
 
-    <button ion-button (click)="getStudentNaam(results)">get naam</button>
-
-    <p *ngIf="csvStudent">{{csvStudent[1]}}</p>
 
   </div>
 
