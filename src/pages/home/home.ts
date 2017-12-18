@@ -132,12 +132,41 @@ export class HomePage {
     //
   }
 
+  saveData() {
+    this.sqlite.create({
+      name: 'scannedstudents.db',
+      location: 'default'
+    }).then((db: SQLiteObject) => {
+      db.executeSql('INSERT INTO scannedstudents VALUES(NULL,?,?,?)',[ new Date(), this.scannedStudent.naam, this.scannedStudent.snr])
+        .then(res => {
+          console.log(res);
+          this.toast.show('Data saved', '5000', 'center').subscribe(
+            toast => {
+              this.navCtrl.popToRoot();
+            }
+          );
+        })
+        .catch(e => {
+          console.log(e);
+          this.toast.show(e, '5000', 'center').subscribe(
+            toast => {
+              console.log(toast);
+            }
+          );
+        });
+    }).catch(e => {
+      console.log(e);
+      this.toast.show(e, '5000', 'center').subscribe(
+        toast => {
+          console.log(toast);
+        }
+      );
+    });
+  }
   getStudentNaam(result){
 
-    let snr = result.text.slice(1);
-
+    let snr = result.text.slice(1, result.length);
     this.csvStudent = this.csvData[0].split(',');
-    this.toast.show("student naam: "+ this.csvStudent[2], '5000', 'center');
 
 
   }
